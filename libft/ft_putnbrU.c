@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbrU.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 12:38:02 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/19 12:36:05 by mpimenta         ###   ########.fr       */
+/*   Created: 2022/06/19 21:02:37 by mpimenta          #+#    #+#             */
+/*   Updated: 2022/06/19 21:10:24 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_putnbrU(unsigned int nb)
 {
-	size_t	j;
-	
-	if (!s)
-	{
-		write (1, "(null)", 6);
-		return (6);
-	}
-	j = 0;
-	while (s[j] != '\0')
-	{
-		ft_putchar_fd(s[j], fd);
-		j++;
-	}
-	return (ft_strlen(s));
+	int	len;
+	char	*str;
+
+	str = ft_itoa_u(nb);
+	len = ft_putstr_fd(str, 1);
+	free(str);
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:40:15 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/16 16:38:14 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/06/17 13:48:43 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-int	ft_printf(const char *cont, ...);
+int	ft_printf(const char *str, ...);
 
 #endif
