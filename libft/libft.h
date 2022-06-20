@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:39:39 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/19 21:16:52 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/06/19 22:04:52 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,7 @@ void	ft_putendl_fd(char *s, int fd);
 int	ft_putnbr_fd(int nb);
 int     ft_putnbrU(unsigned int nb);
 char    *ft_itoa_u(unsigned int nb);
+int     ft_putnbrH(unsigned int nb, char *hexa);
+char    *ft_itoa_h(unsigned int nb, char *hexa);
+int     ft_putnbrP(void *nb, char *hexa);
 #endif

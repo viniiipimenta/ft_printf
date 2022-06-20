@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:38:15 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/19 20:53:37 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/06/19 22:13:04 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int	ft_print_content(const char *str, int i, va_list cont)
 		return (ft_putnbr_fd(va_arg(cont, int)));
 	else if (str[i + 1] == 'u')
 		return (ft_putnbrU(va_arg(cont, unsigned int)));
+	else if (str[i + 1] == 'x')
+		return (ft_putnbrH(va_arg(cont, unsigned int), "0123456789abcdef"));
+	else if (str[i + 1] == 'X')
+		return (ft_putnbrH(va_arg(cont, unsigned int), "0123456789ABCDEF"));
+	else if (str[i + 1] == 'p')
+		return(ft_putstr_fd("0x", 1) + ft_putnbrP(va_arg(cont, void *), "0123456789abcdef"));
 	return (0);
 }
 
