@@ -6,13 +6,13 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:08:22 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/19 21:42:32 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:27:56 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	n_len(unsigned int n)
+static size_t	n_len(unsigned long n)
 {
 	size_t	count;
 
@@ -27,7 +27,7 @@ static size_t	n_len(unsigned int n)
 	return (count);
 }
 
-char	*ft_itoa_h(unsigned int n, char *hexa)
+char	*ft_itoa_h(unsigned long n, char *hexa)
 {
 	int		len;
 	char	*str;
