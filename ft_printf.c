@@ -33,7 +33,7 @@ int	ft_print_content(const char *str, int i, va_list cont)
 	else if (str[i + 1] == 'p')
 	{
 		ret = ft_putstr_fd("0x", 1);
-		ret = ret + ft_putnbr_p(va_arg(cont, unsigned long *), "0123456789abcdef");
+		ret += ft_putnbr_p(va_arg(cont, unsigned long *), "0123456789abcdef");
 		return (ret);
 	}
 	return (0);
