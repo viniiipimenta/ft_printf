@@ -1,8 +1,10 @@
-NAME = libftprintf.a
+NAMEONE = client \
 
-SRCS = ft_printf.c
+NAMETWO = server \
 
-OBJS = ${SRCS:.c=.o}
+SRCSONE = client.c \
+		  
+SRCSTWO = server.c \
 
 CC		= cc
 
@@ -10,27 +12,23 @@ RM		= rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME): ${OBJS}
-			make -C ./libft
-			cp ./libft/libft.a $(NAME)
-			ar rcs ${NAME} ${OBJS}
-
-
-all:	${NAME}
+all:	
+		make -C ./ft_printf
+		mv ./ft_printf/libftprintf.a .
+		cc $(CFLAGS) $(SRCSONE) libftprintf.a -o $(NAMEONE)
+		cc $(CFLAGS) $(SRCSTWO) libftprintf.a -o $(NAMETWO)
 
 clean:
-			${RM} ${OBJS}
-			$(RM) libft.a
-			make -C ./libft clean
+		${RM} ${NAMEONE} ${NAMETWO}
+		${RM} libftprintf.a
+		make -C ./ft_printf clean
 
-fclean:	clean
-			${RM} ${NAME}
-			make -C ./libft fclean
+fclean:
+		make clean
+		make -C ./ft_printf fclean
 
-re:		fclean all
-		make -C ./libft re
+re: 
+		make -C ./ft_printf re
 
-.PHONY: all clean fclean re
+.PHONY: all clean
