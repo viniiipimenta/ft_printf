@@ -18,5 +18,5 @@ int	main(void)
 ## Run
 
 ```sh
- make -s && cc main.c ./ft_printf.a && ./a.out && rm ./a.out && make -s fclean
+ make -s && cc main.c ./libftprintf.a && ./a.out && rm ./a.out && make -s fclean
 ```
